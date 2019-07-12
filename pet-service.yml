@@ -18,8 +18,12 @@ spring:
     username: root
     password: c7o2r1e4
     driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      initialization-fail-timeout: 0
+      
   jpa:
     generate-ddl: true
     hibernate:
       ddl-auto: update
     database-platform: org.hibernate.dialect.MySQL5Dialect
+   
