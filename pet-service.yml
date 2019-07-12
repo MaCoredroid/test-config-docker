@@ -3,7 +3,12 @@ server:
   port: 8091
 
 eureka:
+  instance:
+    hostname: pet-service
+    prefer-ip-address: true
   client:
+    register-with-eureka: true
+    fetch-registry: true
     serviceUrl:
       defaultZone: http://discovery-service:8061/eureka/
       
