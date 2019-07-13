@@ -2,9 +2,14 @@ server:
   port: 8092
 
 eureka:
+  instance:
+    hostname: pet-service
+    prefer-ip-address: true
   client:
+    register-with-eureka: true
+    fetch-registry: true
     serviceUrl:
-      defaultZone: http://localhost:8061/eureka/
+      defaultZone: http://discovery-service:8061/eureka/
       
 spring:
   datasource:
