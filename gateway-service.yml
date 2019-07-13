@@ -34,3 +34,9 @@ spring:
         - Path=/pet/**
         filters:
         - RewritePath=/pet/(?<path>.*), /$\{path}
+      - id: record-service
+        uri: lb://record-service
+        predicates:
+        - Path=/record/**
+        filters:
+        - RewritePath=/record/(?<path>.*), /$\{path}
