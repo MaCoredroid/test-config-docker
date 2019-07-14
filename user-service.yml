@@ -9,7 +9,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     serviceUrl:
-      defaultZone: http://discovery-service:8061/eureka/
+      defaultZone: http://discovery-service:30752/eureka/
       
 spring:
   datasource:
