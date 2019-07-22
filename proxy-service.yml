@@ -1,0 +1,22 @@
+server:
+  port: 30753
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8061/eureka/
+              
+zuul:
+  routes:
+    user-service:
+      path: /user/**
+      serviceId: user-service
+    pet-service:
+      path: /pet/**
+      serviceId: pet-service
+    record-service:
+      path: /record/**
+      serviceId: record-service
+    location-service:
+      path: /location/**
+      serviceId: location-service
