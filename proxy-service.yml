@@ -25,3 +25,6 @@ zuul:
     location-service:
       path: /location/**
       serviceId: location-service
+    rule-service:
+      path: /rule/**
+      serviceId: rule-service
