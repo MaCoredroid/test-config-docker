@@ -72,4 +72,14 @@ spring:
           args:
             name: fallbackcmd
             fallbackUri: forward:/fallback
+      - id: admin-ui
+        uri: lb://admin-ui
+        predicates:
+        - Path=/admin/**
+        filters:
+        - RewritePath=/admin/(?<path>.*), /$\{path}
+        - name: Hystrix
+          args:
+            name: fallbackcmd
+            fallbackUri: forward:/fallback
 
