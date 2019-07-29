@@ -9,6 +9,14 @@ eureka:
     lease-renewal-interval-in-seconds: 90
   client:
     registerWithEureka: false
-    fetchRegistry: false
+    fetchRegistry: true
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+management:
+  security:
+    enabled: false
+spring:
+  boot:
+    admin:
+      context-path: /admin
+      
