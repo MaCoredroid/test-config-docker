@@ -3,13 +3,24 @@ server:
 
 eureka:
   instance:
-    hostname: pet-service
+    hostname: user-service
     prefer-ip-address: true
+    health-check-url-path: /actuator/health
+    metadata-map:
+      startup: ${random.int}   
   client:
     register-with-eureka: true
     fetch-registry: true
     serviceUrl:
       defaultZone: http://discovery-service:30752/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"  
+  endpoint:
+    health:
+      show-details: ALWAYS   
       
 spring:
   datasource:
