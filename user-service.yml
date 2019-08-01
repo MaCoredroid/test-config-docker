@@ -23,6 +23,8 @@ management:
       show-details: ALWAYS   
       
 spring:
+  data.mongodb:
+    uri: mongodb://mongo-cover:27017/cover
   datasource:
     url: jdbc:mysql://mysql-user:3306/user?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
     username: root
