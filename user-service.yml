@@ -2,6 +2,7 @@
 eureka:
   instance:
     hostname: user-service
+    instance-id: user-service:${random.uuid}
     prefer-ip-address: true
     health-check-url-path: /actuator/health
     metadata-map:
