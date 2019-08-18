@@ -6,6 +6,7 @@ eureka:
   instance:
     hostname: forum-service
     appname: forum-service
+    instance-id: forum-service:${random.uuid}
     prefer-ip-address: true
     health-check-url-path: /actuator/health
     metadata-map:
