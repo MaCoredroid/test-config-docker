@@ -1,8 +1,10 @@
 spring:
-  profiles: peer1
+  data.mongodb:
+    uri: mongodb://mongo-moment:27017/moment
+  autoconfigure.exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
 eureka:
   instance:
-    hostname: forum-service1
+    hostname: forum-service
     appname: forum-service
     prefer-ip-address: true
     health-check-url-path: /actuator/health
@@ -22,37 +24,3 @@ management:
     health:
       show-details: ALWAYS 
       
-spring:
-  data.mongodb:
-    uri: mongodb://mongo-moment:27017/moment
-  autoconfigure.exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
-  
----
-spring:
-  profiles: peer2
-eureka:
-  instance:
-    hostname: forum-service2
-    appname: forum-service
-    prefer-ip-address: true
-    health-check-url-path: /actuator/health
-    metadata-map:
-      startup: ${random.int}   
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    serviceUrl:
-      defaultZone: http://discovery-service:30752/eureka/
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"  
-  endpoint:
-    health:
-      show-details: ALWAYS 
-      
-spring:
-  data.mongodb:
-    uri: mongodb://mongo-moment:27017/moment
-  autoconfigure.exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
