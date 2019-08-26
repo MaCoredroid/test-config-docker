@@ -42,3 +42,16 @@ zuul:
     forum-service:
       path: /forum/**
       serviceId: forum-service
+      
+hystrix:
+  command:
+    myusers-service:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 10000
+            
+spring:
+  data.mongodb:
+    uri: mongodb://mongo-auth:27017/auth
+  autoconfigure.exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
