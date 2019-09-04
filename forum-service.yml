@@ -24,4 +24,11 @@ management:
   endpoint:
     health:
       show-details: ALWAYS 
+feign:
+  client:
+    config:
+      user-service:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: full
       
